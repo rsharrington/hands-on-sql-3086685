@@ -1,4 +1,4 @@
 -- SQLite
 INSERT INTO USER ("ID", "NAME")
-VALUES (4, "DRI");
+VALUES (5, "WALTER");
    
