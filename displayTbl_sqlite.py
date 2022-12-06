@@ -7,12 +7,12 @@ import sqlite3
 
 def connect():
 
-    con1 = sqlite3.connect("<path/database_name>")
+    con1 = sqlite3.connect("C:/Tools/hands-on-sql/test3.db")
 
     cur1 = con1.cursor()
 
     cur1.execute(
-        "CREATE TABLE IF NOT EXISTS table1(id INTEGER PRIMARY KEY, First TEXT, Surname TEXT)")
+        "CREATE TABLE IF NOT EXISTS customers(id INTEGER PRIMARY KEY, FirstName TEXT, LastName TEXT)")
 
     con1.commit()
 
@@ -21,11 +21,11 @@ def connect():
 
 def View():
 
-    con1 = sqlite3.connect("<path/database_name>")
+    con1 = sqlite3.connect("C:/Tools/hands-on-sql/test3.db")
 
     cur1 = con1.cursor()
 
-    cur1.execute("SELECT * FROM <table_name>")
+    cur1.execute("SELECT * FROM customers")
 
     rows = cur1.fetchall()
 
@@ -52,11 +52,11 @@ tree.heading("#1", text="ID")
 
 tree.column("#2", anchor=tk.CENTER)
 
-tree.heading("#2", text="FNAME")
+tree.heading("#2", text="firstNAME")
 
 tree.column("#3", anchor=tk.CENTER)
 
-tree.heading("#3", text="LNAME")
+tree.heading("#3", text="lastNAME")
 
 tree.pack()
 
