@@ -15,13 +15,13 @@ txt.pack()
 
 
 class PrintToTXT(object):
- def write(self, s):
-     txt.insert(END, s)
+    def write(self, s):
+        txt.insert(END, s)
 
 
 sys.stdout = PrintToTXT()
 
-print('Pandas date range of 8 values in 1 timestamp column adjacent to a numpy random float array of 8 rows and 4 columns, displayed in a Tkinter table')
+print('Pandas date range of 8 values in 1 timestamp column adjacent to a numpy random float array of 8 rows and 4 columns; displayed in a Tkinter table')
 
 print(dframe)
 
