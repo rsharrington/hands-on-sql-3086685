@@ -4,28 +4,20 @@ import tkinter as tk
 
 import sqlite3
 
+import displayTbl_connection
+import displayTbl_view
 
-def connect():
-
-    con1 = sqlite3.connect("<path/database_name>")
-
-    cur1 = con1.cursor()
-
-    cur1.execute(
-        "CREATE TABLE IF NOT EXISTS table1(id INTEGER PRIMARY KEY, First TEXT, Surname TEXT)")
-
-    con1.commit()
-
-    con1.close()
+# connect to the database
+displayTbl_connection.connect()
 
 
 def View():
 
-    con1 = sqlite3.connect("<path/database_name>")
+    con1 = sqlite3.connect("C:/Tools/hands-on-sql/test2.db")
 
     cur1 = con1.cursor()
 
-    cur1.execute("SELECT * FROM <table_name>")
+    cur1.execute("SELECT * FROM customers")
 
     rows = cur1.fetchall()
 
@@ -36,13 +28,6 @@ def View():
         tree.insert("", tk.END, values=row)
 
     con1.close()
-
-
-# connect to the database
-
-connect()
-
-root = tk.Tk()
 
 tree = ttk.Treeview(root, column=("c1", "c2", "c3"), show='headings')
 
@@ -63,5 +48,7 @@ tree.pack()
 button1 = tk.Button(text="Display data", command=View)
 
 button1.pack(pady=10)
+
+root = tk.Tk()
 
 root.mainloop()
