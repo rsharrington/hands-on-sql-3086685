@@ -9,3 +9,5 @@ import sqliteDb_connection
 
 # connect to the database
 sqliteDb_connection.connect()
+
+# Display database records
